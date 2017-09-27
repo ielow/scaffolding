@@ -20,7 +20,8 @@ module.exports={
 		new HTMLWebpackPlugin({
 			title:'Scaffolding',
 			hash:true,
-			template:'./app/index.pug'
+			template:'./app/views/index.pug',
+      exclude:['node_modules','views/layout']
 		})
 		]
 }
