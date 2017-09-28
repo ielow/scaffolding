@@ -10,6 +10,7 @@ export class App {
             this.ielow.map((elm) => {
                   console.log(`inside app counter: ${elm}`);
             })
+            console.log(filtro)
             this.jqueryTest();
       }
       jqueryTest() {
