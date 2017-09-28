@@ -1,4 +1,7 @@
 import {App} from "./scripts/app";
+import * as $ from "jquery";
 
 let app:App= new App();
-app.init();
+$(document).ready(()=>{
+    app.init();    
+});
