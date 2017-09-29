@@ -1,7 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
 module.exports = {
   entry: './app/index.ts',
   output: {
@@ -22,24 +21,32 @@ module.exports = {
         loader: ['babel-loader', 'ts-loader']
       },
       {
-        test: /\.scss$/,
+        test: [/\.scss$/, /\.sass$/],
         exclude: [/node_modules/,/publicPath/],
         use: ExtractTextPlugin.extract({
           fallback:'style-loader',
-          use: ['postcss-loader','sass-loader']
+          use: [
+            {loader:'postcss-loader' ,options:{"sourceMap":true}},
+            {loader:'sass-loader'}
+            ]
         })
+      },
+      {
+        test:/\.css$/,
+        exclude:[/node_modules/],
+        use:['style-loader','postcss-loader']
       }
     ]
   },
   resolve: {
-    extensions: [".ts", ".js", ".pug",".scss"]
+    extensions: [".ts", ".js", ".pug",".scss",".sass",".css"]
   },
   plugins: [
     new HTMLWebpackPlugin({
       title: 'Scaffolding',
       hash: true,
       template: './app/views/index.pug',
-      exclude: ['node_modules', 'views/layout']
+      exclude: [/node_modules/]
     }),
     new ExtractTextPlugin('stylesheets/styles.min.css')
   ]
