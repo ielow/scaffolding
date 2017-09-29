@@ -14,7 +14,7 @@ export class App {
             this.jqueryTest();
       }
       jqueryTest() {
-            $('h1').html('Desde jqry')
+            $('h1').html('Hello ielow!')
       }
 }
 
