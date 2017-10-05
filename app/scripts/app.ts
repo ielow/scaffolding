@@ -11,11 +11,11 @@ export class App {
             this.ielow.map((elm) => {
                   console.log(`inside app counter: ${elm}`);
             })
-            $('body').append(this.template({name:'chido'}));
+            $('.wrapper').append(this.template({name:'chido'}));
             this.jqueryTest();
       }
       jqueryTest() {
-            $('h1').html('Hello ielow!')
+            $('h1').html('Hello ielow!');
       }
 }
 

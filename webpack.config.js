@@ -2,6 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {NoEmitOnErrorsPlugin}= require('webpack');
 
 module.exports = {
   entry: './app/index.ts',
@@ -55,6 +56,7 @@ module.exports = {
     extensions: [".ts", ".js", ".pug",".scss",".sass",".css",".hbs"]
   },
   plugins: [
+  new NoEmitOnErrorsPlugin(),
   new HTMLWebpackPlugin({
     title: 'Scaffolding',
     hash: true,
