@@ -4,7 +4,7 @@
   "description": "Scaffolding projects with Webpack by ielow ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "start": "npm install",
     "build": "webpack --progress --color",
     "serve": "webpack-dev-server --color --progress --open --port=3000",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ielow/scaffolding#readme",
   "devDependencies": {
+    "@types/jest": "^21.1.2",
     "@types/jquery": "^3.2.12",
     "@types/node": "^8.0.32",
     "babel-core": "^6.26.0",
@@ -37,6 +38,7 @@
     "handlebars-loader": "^1.6.0",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
     "postcss-loader": "^2.0.6",
@@ -46,6 +48,7 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "ts-jest": "^21.1.0",
     "ts-loader": "^2.3.7",
     "typescript": "^2.5.2",
     "url-loader": "^0.6.2",
@@ -55,5 +58,21 @@
   "dependencies": {
     "@types/handlebars": "^4.0.36",
     "jquery": "^3.2.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|hbs)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.ts?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "moduleDirectories": ["node_modules", "app"]
   }
 }
