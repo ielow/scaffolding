@@ -53,7 +53,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [".ts", ".js", ".pug",".scss",".sass",".css",".hbs"]
+    extensions: [".ts", ".js", ".pug",".scss",".sass",".css"]
   },
   plugins: [
   new NoEmitOnErrorsPlugin(),

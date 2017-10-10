@@ -4,7 +4,7 @@
   "description": "Scaffolding projects with Webpack by ielow ",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest --watch --config=./test/jest.config.js",
     "start": "npm install",
     "build": "webpack --progress --color",
     "serve": "webpack-dev-server --color --progress --open --port=3000",
@@ -58,21 +58,5 @@
   "dependencies": {
     "@types/handlebars": "^4.0.36",
     "jquery": "^3.2.1"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|hbs)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "transform": {
-      "^.+\\.ts?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "json"
-    ],
-    "moduleDirectories": ["node_modules", "app"]
   }
 }
